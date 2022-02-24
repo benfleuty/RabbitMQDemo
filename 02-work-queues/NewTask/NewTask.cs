@@ -1,8 +1,9 @@
 ﻿using System;
 using RabbitMQ.Client;
 using System.Text;
+using System.Threading;
 
-class Send
+class NewTask
 {
     public static void Main(string[] args)
     {
@@ -25,7 +26,11 @@ class Send
         properties.Persistent = true;
 
         // publish (send) the message to the queue
-        channel.BasicPublish(exchange: "", routingKey: "task_queue", basicProperties: properties, body: body);
+        for (var i = 0; i < 10000; i++)
+        {
+            channel.BasicPublish(exchange: "", routingKey: "task_queue", basicProperties: properties, body: body);
+            Thread.Sleep(100);
+        }
 
         Console.WriteLine($" [x] Sent {message}");
         Console.WriteLine("Exiting.");
