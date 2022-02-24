@@ -14,3 +14,7 @@ The producer creates a message containing "Hello World!" and sends the message t
 
 Running the producer script multiple times will send as many "Hello World"'s as were ran.
 As long as the docker container is running, messages can be sent. Messages will remain in the queue until a consumer comes online to receive the messages.
+
+## 01.5 - Hello, Input!
+
+This is a modification of `01 - Hello, World!` which allows the user to input a message to be sent to the queue.
