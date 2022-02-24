@@ -27,10 +27,8 @@ class Send
         // publish (send) the message to the queue
         channel.BasicPublish(exchange: "", routingKey: "task_queue", basicProperties: properties, body: body);
 
-        Console.WriteLine(" [x] Sent {0}", message);
-
-        Console.WriteLine(" Press [enter] to exit.");
-        Console.ReadLine();
+        Console.WriteLine($" [x] Sent {message}");
+        Console.WriteLine("Exiting.");
     }
 
     private static string GetMessage(string[] args)
