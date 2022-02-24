@@ -18,3 +18,10 @@ As long as the docker container is running, messages can be sent. Messages will 
 ## 01.5 - Hello, Input!
 
 This is a modification of `01 - Hello, World!` which allows the user to input a message to be sent to the queue.
+
+
+## 02 - Hello, Work Queues
+
+This exercise introduces work queues, allowing for multiple consumers to work on tasks in a queue.
+
+QoS balancing prevents inbalances in workloads as workers are only assigned a new task when they complete their current one.
