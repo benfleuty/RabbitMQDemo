@@ -30,7 +30,7 @@ class Receive
             // 'body' is converted from UTF8 encoded bytes into a string
             var message = Encoding.UTF8.GetString(body);
             // output the received message to the console
-            Console.WriteLine(" [x] Received {0}", message);
+            Console.WriteLine($" [x] Received {message}");
         };
 
         // consume and acknowledge the message
