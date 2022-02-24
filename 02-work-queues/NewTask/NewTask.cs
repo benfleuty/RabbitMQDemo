@@ -13,7 +13,7 @@ class Send
         // Create the channel for sending the message
         using var channel = connection.CreateModel();
         // define queue name and properties
-        channel.QueueDeclare(queue: "hello", durable: false, exclusive: false, autoDelete: false, arguments: null);
+        channel.QueueDeclare(queue: "task_queue", durable: false, exclusive: false, autoDelete: false, arguments: null);
 
         // define the message
         string message = GetMessage(args);
@@ -25,7 +25,7 @@ class Send
         properties.Persistent = true;
 
         // publish (send) the message to the queue
-        channel.BasicPublish(exchange: "", routingKey: "hello", basicProperties: properties, body: body);
+        channel.BasicPublish(exchange: "", routingKey: "task_queue", basicProperties: properties, body: body);
 
         Console.WriteLine(" [x] Sent {0}", message);
 
